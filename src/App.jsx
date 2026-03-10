@@ -2,6 +2,9 @@ import React from 'react';
 import Product from "./components/Products";
 import ControlledInput from "./components/ControlledInput";
 import Profile from './components/Users/Profile';
+import Header from './components/Header';
+import Main from './components/Main';
+import Footer from './components/Footer';
 
 function App() {
 
@@ -35,6 +38,10 @@ function App() {
   return (
     <div className="App">
       <Profile />
+      <hr />
+      <Header />
+      <Main />
+      <Footer />
       <hr />
       <h1>Quản lý Sản phẩm</h1>
       

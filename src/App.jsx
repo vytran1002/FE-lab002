@@ -3,7 +3,7 @@ import Product from "./components/Products";
 import ControlledInput from "./components/ControlledInput";
 import Profile from './components/Users/Profile';
 import Header from './components/Header';
-import SPKhuyenMai, {SPBanChay,SPHot} from "./components/main"; 
+import SPKhuyenMai, {SPBanChay,SPHot} from './components/Main';
 // import Main from './components/Main';
 import Footer from './components/Footer';
 

@@ -3,7 +3,8 @@ import Product from "./components/Products";
 import ControlledInput from "./components/ControlledInput";
 import Profile from './components/Users/Profile';
 import Header from './components/Header';
-import Main from './components/Main';
+import SPKhuyenMai, {SPBanChay,SPHot} from "./components/main"; 
+// import Main from './components/Main';
 import Footer from './components/Footer';
 
 function App() {
@@ -40,7 +41,9 @@ function App() {
       <Profile />
       <hr />
       <Header />
-      <Main />
+      <SPKhuyenMai />
+      <SPBanChay />
+      <SPHot />
       <Footer />
       <hr />
       <h1>Quản lý Sản phẩm</h1>

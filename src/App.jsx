@@ -1,6 +1,7 @@
 import React from 'react';
 import Product from "./components/Products";
 import ControlledInput from "./components/ControlledInput";
+import Profile from './components/Users/Profile';
 
 function App() {
 
@@ -33,6 +34,8 @@ function App() {
 
   return (
     <div className="App">
+      <Profile />
+      <hr />
       <h1>Quản lý Sản phẩm</h1>
       
       <ControlledInput />

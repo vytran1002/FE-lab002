@@ -1,12 +1,37 @@
-import React from 'react'
+import React, { useState } from "react";
 
 function Profile() {
+  const [profile, setProfile] = useState({ ten: "", tuoi: "" });
+  const handleClick = (e) => {
+    const { name, value } = e.target;
+    setProfile({ ...profile, [name]: value });
+  };
+
   return (
     <div>
-      <h1 className='name'>Profile</h1>
+      <h1 className="name">Profile</h1>
       <img src="src/assets/react.svg" alt="React Logo" />
+      <h1>Nhập Profile:</h1>
+      <input
+        onChange={handleClick}
+        name="ten"
+        value={profile.ten}
+        type="text"
+        placeholder="Tên bạn là:"
+      />
+      <input
+        onChange={handleClick}
+        name="tuoi"
+        value={profile.tuoi}
+        type="text"
+        placeholder="Tuổi bạn là:"
+      />
+      <p>
+        Tên: {profile.ten} <br />
+        Tuổi: {profile.tuoi}
+      </p>
     </div>
-  )
+  );
 }
 
-export default Profile
+export default Profile;

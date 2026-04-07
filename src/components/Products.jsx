@@ -1,15 +1,25 @@
-import React from "react";
+const products = [
+  {
+    id: 1,
+    ten: 'Laptop Dell',
+    hinh: '/vite.svg',
+    mota: 'Laptop cấu hình ổn định cho công việc văn phòng',
+    gia: 15000000,
+  },
+  {
+    id: 2,
+    ten: 'Chuột không dây',
+    hinh: '/vite.svg',
+    mota: 'Chuột tiện lợi, phù hợp cho thiết kế và học tập',
+    gia: 450000,
+  },
+  {
+    id: 3,
+    ten: 'Bàn phím cơ',
+    hinh: '/vite.svg',
+    mota: 'Bàn phím phản hồi nhanh, dành cho người chơi cao cấp',
+    gia: 1200000,
+  },
+];
 
-export default function Product({ name, price, inStock, categories, info, onCheck }) {
-  return (
-    <div style={{ border: "1px solid #ccc", padding: "10px", margin: "10px" }}>
-      <h3>{name}</h3>
-      <p>Giá: {price} VNĐ</p>
-      <p>Còn hàng: {inStock ? "Có" : "Hết"}</p>
-      <p>Danh mục: {categories.join(", ")}</p>
-      <p>Xuất xứ: {info.origin}</p>
-    
-      <button onClick={() => onCheck(name)}>Kiểm tra sản phẩm</button>
-    </div>
-  );
-}
+export default products;

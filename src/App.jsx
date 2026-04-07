@@ -1,41 +1,13 @@
-import React from 'react';
-import Product from "./components/Products";
-import ControlledInput from "./components/ControlledInput";
-import Profile from './components/Users/Profile';
-import Header from './components/Header';
-import SPKhuyenMai, {SPBanChay,SPHot} from './components/Main';
-// import Main from './components/Main';
-import Footer from './components/Footer';
+import products from "./components/Products";
+import Profile from "./components/Users/Profile";
+import Header from "./components/Header";
+import SPKhuyenMai, { SPBanChay, SPHot } from "./components/Main";
+import Footer from "./components/Footer";
+import Controlled from "./components/Controlled";
+import Uncontrolled from "./components/UnControlled";
+import "./App.css";
 
 function App() {
-
-  const handleChildAction = (productName) => {
-    alert("Bạn đang xem sản phẩm: " + productName);
-  };
-
-  const productData = [{
-    name: "Laptop Dell Precision",
-    price: 25000000,
-    inStock: true,
-    categories: ["Laptop", "Đồ họa"],
-    info: { origin: "USA" }
-  },
-  {
-    name: "Điện thoại Samsung Galaxy S21",
-    price: 15000000,
-    inStock: false,
-    categories: ["Điện thoại", "Android"],
-    info: { origin: "Hàn Quốc" }
-  },
-  {
-    name: "Tai nghe Sony WH-1000XM4",
-    price: 7000000,
-    inStock: true,
-    categories: ["Âm thanh", "Tai nghe"],
-    info: { origin: "Nhật Bản" }
-  }
-];
-
   return (
     <div className="App">
       <Profile />
@@ -47,20 +19,28 @@ function App() {
       <Footer />
       <hr />
       <h1>Quản lý Sản phẩm</h1>
-      
-      <ControlledInput />
+
+      <Controlled />
+      <Uncontrolled />
       <hr />
-      {productData.map((product, index) => (
-        <Product 
-          key={index}
-          name={product.name}
-          price={product.price}
-          inStock={product.inStock}
-          categories={product.categories}
-          info={product.info}
-          onCheck={handleChildAction} 
-        />
-      ))}
+
+      <div className="product-grid">
+        {products.map((item) => (
+          <div className="card tour-card shadow-sm" key={item.id}>
+            <img alt={item.ten} className="card-img-top" src={item.hinh} />
+            <div className="card-body">
+              <h5 className="card-title">{item.ten}</h5>
+              <p className="card-text">{item.mota}</p>
+              <h5 className="card-title text-danger">
+                {item.gia.toLocaleString()} VND
+              </h5>
+              <a className="btn btn-primary" href="#">
+                Chi tiết
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

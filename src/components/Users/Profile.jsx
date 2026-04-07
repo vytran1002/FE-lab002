@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import reactLogo from "../../assets/react.svg";
 
 function Profile() {
   const [profile, setProfile] = useState({ ten: "", tuoi: "" });
@@ -10,7 +11,7 @@ function Profile() {
   return (
     <div>
       <h1 className="name">Profile</h1>
-      <img src="src/assets/react.svg" alt="React Logo" />
+      <img src={reactLogo} alt="React Logo" />
       <h1>Nhập Profile:</h1>
       <input
         onChange={handleClick}
